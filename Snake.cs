@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Snake : IDie, IMove
+    class Snake
     {
         GridMap map;
         SnakeHead head;
@@ -113,7 +113,7 @@ namespace Snake
 
                     if (nextPositionIsOutsideTheMap())
                     {
-                        Die();
+                        die();
                     }
                     else if (nextPositionIsEmpty())
                     {
@@ -124,12 +124,12 @@ namespace Snake
                         GridObject obj = getNextObject();
                         if (obj is Food)
                         {
-                            ((Food)obj).Die();
+                            ((Food)obj).BeAte();
                             grow();
                         }
                         else // is wall, snake head or snake body
                         {
-                            Die();
+                            die();
                         }
                     }
 
@@ -259,7 +259,7 @@ namespace Snake
             }
         }
 
-        public void Die()
+        void die()
         {
             Remove();
         }

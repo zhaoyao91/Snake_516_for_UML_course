@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Food : GridObject, IDie
+    class Food : GridObject
     {
         public Food(GridMap map)
             :base(map)
@@ -14,8 +14,7 @@ namespace Snake
 
         }
 
-
-        public void Die()
+        public void BeAte()
         {
             Remove();
         }
