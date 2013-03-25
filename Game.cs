@@ -62,6 +62,22 @@ namespace Snake
             }
         }
 
+        public virtual int PlayerLength
+        {
+            get
+            {
+                return player.Length;
+            }
+        }
+
+        public virtual int ComputerLength
+        {
+            get
+            {
+                return computer.Length;
+            }
+        }
+
         public Snapshot[,] Snapshots
         {
             get
